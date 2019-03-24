@@ -1,10 +1,12 @@
 package it.michelepierri.patternrecognition.controller;
 
+import java.util.List;
 import java.util.Set;
+
+import org.springframework.http.ResponseEntity;
 
 import it.michelepierri.patternrecognition.domain.dto.LineDto;
 import it.michelepierri.patternrecognition.domain.dto.PointDto;
-import it.michelepierri.patternrecognition.domain.dto.SpaceDto;
 
 public interface RecognitionController {
 
@@ -16,16 +18,16 @@ public interface RecognitionController {
 	/**
 	 * @return
 	 */
-	public SpaceDto getSpace();
+	public Set<PointDto> getSpace();
 	
 	/**
 	 * @return
 	 */
-	public Set<LineDto> getLines();
+	public ResponseEntity getLines(int n);
 	
 	/**
 	 * @return
 	 */
-	public int deleteSpace();
+	public void deleteSpace();
 	
 }

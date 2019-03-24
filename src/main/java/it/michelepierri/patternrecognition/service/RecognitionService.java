@@ -1,10 +1,10 @@
 package it.michelepierri.patternrecognition.service;
 
+import java.util.List;
 import java.util.Set;
 
 import it.michelepierri.patternrecognition.domain.dto.LineDto;
 import it.michelepierri.patternrecognition.domain.dto.PointDto;
-import it.michelepierri.patternrecognition.domain.dto.SpaceDto;
 
 public interface RecognitionService {
 
@@ -14,17 +14,18 @@ public interface RecognitionService {
 	public void addPoint(PointDto point);
 	
 	/**
+	 * @param n 
 	 * @return
 	 */
-	public SpaceDto getSpace();
+	public List<List<PointDto>> getLines(int n);
 	
+	/**
+	 * 
+	 */
+	public void deleteSpace();
+
 	/**
 	 * @return
 	 */
-	public Set<LineDto> getLines();
-	
-	/**
-	 * @return
-	 */
-	public int deleteSpace();
+	public Set<PointDto> getSpace();
 }

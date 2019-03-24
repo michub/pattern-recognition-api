@@ -1,10 +1,10 @@
 package it.michelepierri.patternrecognition.repository;
 
+import java.util.List;
 import java.util.Set;
 
 import it.michelepierri.patternrecognition.domain.dto.LineDto;
 import it.michelepierri.patternrecognition.domain.dto.PointDto;
-import it.michelepierri.patternrecognition.domain.dto.SpaceDto;
 
 public interface RecognitionRepository {
 
@@ -16,15 +16,12 @@ public interface RecognitionRepository {
 	/**
 	 * @return
 	 */
-	public SpaceDto getSpace();
-	
+	void init();
+
 	/**
 	 * @return
 	 */
-	public Set<LineDto> getLines();
-	
-	/**
-	 * @return
-	 */
-	public int deleteSpace();
+	public Set<PointDto> getPointsSpace();
+
+	List<LineDto> getLinesWithCollinearPoints(int n);
 }
